@@ -7,7 +7,10 @@
 <br>
 4. php artisan key:generate
 <br>
-5. jalanan web dengan php artisan serve
-
+5. jalankan web dengan php artisan serve 
+<br>
+6. jalankan php artisan db:seed
+<br>
+7. sebelum jalankan php artisan db:seed bisa di cek di folder database/seeders/userstable
 </p>
 

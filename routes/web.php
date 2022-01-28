@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
@@ -25,7 +26,11 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 //      \UniSharp\LaravelFilemanager\Lfm::routes();
    
 //  });
-Route::resource('home', DashboardController::class);
-Route::resource('role', RoleController::class);
- Route::post('upload', [ImageController::class,'store'])->name('upload');
-Route::resource('/tag', TagController::class);
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('home', DashboardController::class);
+    Route::resource('role', RoleController::class);
+    Route::post('upload', [ImageController::class,'store'])->name('upload');
+    Route::resource('tag', TagController::class);
+    Route::resource('article',ArticleController::class);
+});

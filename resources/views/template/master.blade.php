@@ -48,7 +48,7 @@
     <script src=".{{ asset('admin/boostrap/js/bootstrap.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('admin/js/adminlte.js') }}"></script>
-    @yield('js')
+@stack('js')
 </body>
 
 </html>

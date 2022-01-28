@@ -6,10 +6,10 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ asset('admin/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>{{ Auth::user()->name }}</p>
                         <!-- Status -->
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
@@ -32,17 +32,17 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <!-- <li class="header">HEADER</li> -->
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                    <li class="treeview">
+                    <li id="menu-dashboard"><a href="{{ route('home.index') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                    <li class="treeview" id="menu-editor">
                         <a href="#"><i class="fa fa-pencil-square-o"></i> <span>Editorial</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"> <i class="fa fa-file-text-o"></i>   Create Article</a></li>
+                            <li ><a href="#"> <i class="fa fa-file-text-o"></i>   Create Article</a></li>
                             <li><a href="#"><i class="fa fa-clone"></i>Draff</a></li>
-                            <li><a href="#"><i class="fa fa-check-square-o"></i>Published</a></li>
+                            <li id="menu-article"><a href="#"><i class="fa fa-check-square-o"></i>Published</a></li>
                             <li><a href="#"><i class="fa  fa-calendar"></i>Scheduled</a></li>
                             <li><a href="#"><i class="fa fa-trash-o"></i>Trash</a></li>
                         </ul>
