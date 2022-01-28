@@ -9,16 +9,16 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Create Roles</h3>
+              <h3 class="box-title">Create Tag</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="{{ route('role.update',$role->id) }}">
+            <form role="form" method="POST" action="{{ route('tag.store') }}">
               @csrf
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
-                  <input type="text" class="form-control" name="name" value="{{ $role->name }}" placeholder="Roles">
+                  <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Roles">
                 </div>
                
               </div>

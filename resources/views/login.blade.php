@@ -1,75 +1,88 @@
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name='robots' content='noindex' />
-    <title>Login - HOPS CMS</title>
-    <link rel="shortcut icon" href="https://assets.promediateknologi.com/promedia/network/294/desktop/images/favicon/favicon.ico" type="image/x-icon" />
-    <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hops</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="{{ asset('admin/boostrap/css/bootstrap.min.css') }}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ asset('admin/font-awesome/css/font-awesome.min.css') }}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{{ asset('admin/Ionicons/css/ionicons.min.css') }}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('admin/css/AdminLTE.min.css') }}">
+  <!-- iCheck -->
+  {{-- <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css"> --}}
 
-    <link rel="stylesheet" href="https://editor.promediateknologi.com/assets/login/css/animate.css">
-    <link rel="stylesheet" href="https://editor.promediateknologi.com/assets/plugins/sweetalert/css/sweetalert.css?">
-    <link rel="stylesheet" href="https://editor.promediateknologi.com/assets/dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="https://editor.promediateknologi.com/assets/dist/css/adminlte.custom.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <img src="https://assets.promediateknologi.com/promedia/network/294/desktop/images/logo.png?v=152" width="300">
-    <!-- <a href="https://editor.promediateknologi.com/"><b>Editor</b> Promedia Teknologi</a> -->
+    <a href="../../index2.html"><b>Admin</b>LTE</a>
   </div>
   <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
 
-      <form id="form_data" method="post">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Username" name="username" autocomplete="off">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
+    <form action="{{ route('actionlogin') }}" method="post">
+      <div class="form-group has-feedback">
+        <input type="email" name="email" class="form-control" placeholder="Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" name="password" class="form-control" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> Remember Me
+            </label>
           </div>
         </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password" autocomplete="off">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
         </div>
-        <div class="g-recaptcha" ></div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <!-- <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label> -->
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="button" class="btn btn-primary btn-block btn-flat btn_action" data-idle="Sign In" data-process="Login..." data-form="#form_data" data-action="https://editor.promediateknologi.com/login/do_login" data-redirect="https://editor.promediateknologi.com/">Sign In</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
+        <!-- /.col -->
+      </div>
+    </form>
+
+    <div class="social-auth-links text-center">
+      <p>- OR -</p>
+      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
+        Facebook</a>
+      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+        Google+</a>
     </div>
-    <!-- /.login-card-body -->
+    <!-- /.social-auth-links -->
+
+    <a href="#">I forgot my password</a><br>
+    <a href="register.html" class="text-center">Register a new membership</a>
+
   </div>
+  <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
 
-<script type="text/javascript" src="https://editor.promediateknologi.com/assets/plugins/sweetalert/js/sweetalert.min.js"></script>
-<script type="text/javascript" src="https://editor.promediateknologi.com/assets/plugins/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="https://editor.promediateknologi.com/assets/script/general.js?v=11"></script>
-
+<!-- jQuery 3 -->
+<script src="{{ asset('admin/js/jquery.min.js') }}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{{ asset('admin/boostrap/js/bootstrap.min.js') }}"></script>
+<!-- iCheck -->
 </body>
 </html>

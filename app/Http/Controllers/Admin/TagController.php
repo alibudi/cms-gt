@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Role;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
-class RoleController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $role = Role::all();
-        return view('role.index',compact('role'));
+        $tag = Tag::paginate(5);
+        return view('tag.index',compact('tag'));
     }
 
     /**
@@ -26,7 +26,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('role.create');
+        return view('tag.create');
     }
 
     /**
@@ -37,7 +37,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-         $request->validate([
+        $request->validate([
             'name'   => 'required'
         ]);
         $data = [
@@ -45,15 +45,15 @@ class RoleController extends Controller
 
         ];
 
-        $role = Role::create($data);
+        $tag = Tag::create($data);
         // dd($category);
-        if ($role) {
+        if ($tag) {
             Alert::success('Sukses Tambah', 'Sukses Tambah Data');
-            return redirect()->route('role.index');
+            return redirect()->route('tag.index');
         }
 
         Alert::success('Gagal Tambah', 'Gagal Tambah Data');
-        return redirect()->route('role.create'); 
+        return redirect()->route('tag.create');
     }
 
     /**
@@ -75,8 +75,8 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        $role = Role::findOrFail($id);
-            return view('role.edit',compact('role'));
+        $tag = Tag::findOrFail($id);
+        return view('tag.edit',compact('tag'));
     }
 
     /**
@@ -88,14 +88,14 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $request->validate([
+        $request->validate([
             'name'   => 'required',
         ]);
 
-        $role = Role::find($id);
-        $role->name = $request->name;
+        $tag = Tag::find($id);
+        $tag->name = $request->name;
 
-        if ($role->update()) {
+        if ($tag->update()) {
             Alert::success('Sukses Update', 'Sukses Update Data');
             return redirect()->route('categori.index');
         }
@@ -112,13 +112,13 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-         $role = Role::findOrFail($id);
-        if ($role->delete()) {
-            Alert::success('Hapus Sukses', 'Sukses Hapus Data');
-            return redirect()->route('role.index');
+        $tag = Tag::findOrFail($id);
+        if($tag->delete()){
+             Alert::success('Hapus Sukses', 'Sukses Hapus Data');
+            return redirect()->route('tag.index');
         }
 
         Alert::success('Gagal Hapus', 'Gagal Hapus Data');
-        return redirect()->route('role.index');
+        return redirect()->route('tag.index');
     }
 }
