@@ -33,6 +33,8 @@
                     <!-- <li class="header">HEADER</li> -->
                     <!-- Optionally, you can add icons to the links -->
                     <li id="menu-dashboard"><a href="{{ route('home.index') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                     <li id="menu-role"><a href="{{ route('role.index') }}"><i class="fa fa-user"></i> <span>Role</span></a></li>
+                      <li id="menu-categori"><a href="{{ route('categori.index') }}"><i class="fa fa-file"></i> <span>Rubrik</span></a></li>
                     <li class="treeview" id="menu-editor">
                         <a href="#"><i class="fa fa-pencil-square-o"></i> <span>Editorial</span>
                             <span class="pull-right-container">
@@ -40,9 +42,9 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li ><a href="#"> <i class="fa fa-file-text-o"></i>   Create Article</a></li>
+                            <li ><a href="{{ route('article.create') }}"> <i class="fa fa-file-text-o"></i>   Create Article</a></li>
                             <li><a href="#"><i class="fa fa-clone"></i>Draff</a></li>
-                            <li id="menu-article"><a href="#"><i class="fa fa-check-square-o"></i>Published</a></li>
+                            <li id="menu-article"><a href="{{ route('article.index') }}"><i class="fa fa-check-square-o"></i>Published</a></li>
                             <li><a href="#"><i class="fa  fa-calendar"></i>Scheduled</a></li>
                             <li><a href="#"><i class="fa fa-trash-o"></i>Trash</a></li>
                         </ul>

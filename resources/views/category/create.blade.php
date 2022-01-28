@@ -13,12 +13,16 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="{{ route('role.store') }}">
+            <form role="form" method="POST" action="{{ route('categori.store') }}">
               @csrf
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
-                  <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Roles">
+                  <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Slug</label>
+                  <input type="text" class="form-control" name="slug" id="exampleInputEmail1" placeholder="Slug">
                 </div>
                
               </div>

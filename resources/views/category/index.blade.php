@@ -9,7 +9,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"><a href="{{ route('role.create') }}" class="btn btn-success"> <i class="fa fa-plus"></i> New Role</a></h3>
+              <h3 class="box-title"><a href="{{ route('role.create') }}" class="btn btn-success"> <i class="fa fa-plus"></i> New Article</a></h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
@@ -28,17 +28,16 @@
                 <tr>
                   <th>No</th>
                   <th>Name</th>
+                  <th>Slug</th>
                   <td>Action</td>
                 </tr>
                 </thead>
                 <tbody>
-                  @php
-                      $no = 1;
-                  @endphp
-                @foreach ($role as $item)
+                @foreach ($categori as $item)
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $item->name }}</td>
+                        <td>{{ $item->slug }}</td>
                         <td></td>
                     </tr>
                 @endforeach
@@ -56,7 +55,7 @@
     @include('sweetalert::alert')
     @push('js')
         <script>
-               $("#menu-role").addClass("active");
+               $("#menu-categori").addClass("active");
         </script>
     @endpush
 @endsection

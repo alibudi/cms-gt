@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
@@ -33,4 +34,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('upload', [ImageController::class,'store'])->name('upload');
     Route::resource('tag', TagController::class);
     Route::resource('article',ArticleController::class);
+    Route::resource('categori',CategoryController::class);
 });
