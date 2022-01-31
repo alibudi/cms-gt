@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -24,7 +26,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $tags       = Tag::all();
+        return view('article.create',compact('categories','tags'));
     }
 
     /**
@@ -57,7 +61,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

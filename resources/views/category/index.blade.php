@@ -9,7 +9,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"><a href="{{ route('role.create') }}" class="btn btn-success"> <i class="fa fa-plus"></i> New Article</a></h3>
+              <h3 class="box-title"><a href="{{ route('categori.create') }}" class="btn btn-success"> <i class="fa fa-plus"></i> New Rubrik</a></h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
@@ -29,16 +29,26 @@
                   <th>No</th>
                   <th>Name</th>
                   <th>Slug</th>
-                  <td>Action</td>
+                  <td style="width: 40px">Action</td>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($categori as $item)
+                  @php
+                      $no = 1;
+                  @endphp
+                @foreach ($categories as $item)
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->slug }}</td>
-                        <td></td>
+                        <td>
+                            <form action="{{ route('categori.destroy',$item->id) }}" method="POST"> 
+                              <a class="btn btn-primary btn-xs" href="{{ route('categori.edit',$item->id) }}"><i class="fa fa-pencil"></i></a> 
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i></button>
+                          </form>
+                        </td>
                     </tr>
                 @endforeach
              

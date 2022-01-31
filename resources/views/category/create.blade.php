@@ -9,7 +9,7 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Create Roles</h3>
+              <h3 class="box-title">Create Rubrik</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -20,11 +20,11 @@
                   <label for="exampleInputEmail1">Name</label>
                   <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Name">
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <label for="exampleInputEmail1">Slug</label>
                   <input type="text" class="form-control" name="slug" id="exampleInputEmail1" placeholder="Slug">
                 </div>
-               
+                --}}
               </div>
               <!-- /.box-body -->
 

@@ -78,7 +78,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $categoris = Category::findOrFail($id);
+        $categories = Category::findOrFail($id);
         return view('category.edit',compact('categories'));
     }
 
@@ -98,7 +98,7 @@ class CategoryController extends Controller
 
         $categories = Category::find($id);
         $categories->name = $request->name;
-         $categories->name = Str::slug($request->slug);
+         $categories->slug = $request->slug;
 
         if ($categories->update()) {
             Alert::success('Sukses Update', 'Sukses Update Data');
