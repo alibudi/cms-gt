@@ -3,13 +3,13 @@
       <!-- Content Header (Page header) -->
     
     <!-- Main content -->
-    <section class="content">
+<section class="content">
     
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"><a href="{{ route('role.create') }}" class="btn btn-success">Add Data</a></h3>
+              <h3 class="box-title"><a href="{{ route('tag.create') }}" class="btn btn-success"> <i class="fa fa-plus"></i> New Tag</a></h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
@@ -22,18 +22,36 @@
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Nama</th>
-                  <th>Action</th>
+                  <th>No</th>
+                  <th>Name</th>
+                  <td style="width: 40px">Action</td>
                 </tr>
+                </thead>
+                <tbody>
+                  @php
+                      $no = 1;
+                  @endphp
                 @foreach ($tag as $item)
-                    <td>{{ $no++ }}</td>
-                    <td>{{ $item->name }}</td>
-
+                    <tr>
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->slug }}</td>
+                        <td>
+                            <form action="{{ route('tag.destroy',$item->id) }}" method="POST"> 
+                              <a class="btn btn-primary btn-xs" href="{{ route('tag.edit',$item->id) }}"><i class="fa fa-pencil"></i></a> 
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i></button>
+                          </form>
+                        </td>
+                    </tr>
                 @endforeach
+             
+                </tbody>
               </table>
             </div>
             <!-- /.box-body -->
@@ -44,4 +62,10 @@
     </section>
     <!-- /.content -->
     @include('sweetalert::alert')
+    @push('js')
+        <script>
+
+               $("#menu-tag").addClass("active");
+        </script>
+    @endpush
 @endsection

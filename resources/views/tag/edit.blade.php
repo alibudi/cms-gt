@@ -38,4 +38,9 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
+    @push('js')
+        <script>
+               $("#menu-tag").addClass("active");
+        </script>
+    @endpush
 @endsection

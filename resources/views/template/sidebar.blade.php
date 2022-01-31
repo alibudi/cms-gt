@@ -35,6 +35,7 @@
                     <li id="menu-dashboard"><a href="{{ route('home.index') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                      <li id="menu-role"><a href="{{ route('role.index') }}"><i class="fa fa-user"></i> <span>Role</span></a></li>
                       <li id="menu-categori"><a href="{{ route('categori.index') }}"><i class="fa fa-file"></i> <span>Rubrik</span></a></li>
+                        <li id="menu-tag"><a href="{{ route('tag.index') }}"><i class="fa fa-file-o"></i> <span>Tags</span></a></li>
                     <li class="treeview" id="menu-editor">
                         <a href="#"><i class="fa fa-pencil-square-o"></i> <span>Editorial</span>
                             <span class="pull-right-container">

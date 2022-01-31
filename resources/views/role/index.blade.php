@@ -39,7 +39,14 @@
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $item->name }}</td>
-                        <td></td>
+                        <td>
+                          <form action="{{ route('role.destroy',$item->id) }}" method="POST"> 
+                              <a class="btn btn-primary btn-xs" href="{{ route('role.edit',$item->id) }}"><i class="fa fa-pencil"></i></a> 
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i></button>
+                          </form>
+                        </td>
                     </tr>
                 @endforeach
              
