@@ -38,15 +38,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
-                </tr>
+                  @php
+                      $no = 1;
+                  @endphp
+                  @foreach ($article as $item)
+                      <tr>
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $item->title }}</td>
+                        <td>{{ $item->status }}</td>
+                        <td>{{ $item->rubrik }}</td>
+                      </tr>
+                  @endforeach
              
                 </tbody>
               </table>

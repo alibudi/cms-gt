@@ -43,7 +43,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li ><a href="{{ route('article.create') }}"> <i class="fa fa-file-text-o"></i>   Create Article</a></li>
+                            <li id="menu-create-article" ><a href="{{ route('article.create') }}"> <i class="fa fa-file-text-o"></i>   Create Article</a></li>
                             <li><a href="#"><i class="fa fa-clone"></i>Draff</a></li>
                             <li id="menu-article"><a href="{{ route('article.index') }}"><i class="fa fa-check-square-o"></i>Published</a></li>
                             <li><a href="#"><i class="fa  fa-calendar"></i>Scheduled</a></li>

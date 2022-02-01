@@ -10,7 +10,7 @@ class Category extends Model
     use HasFactory;
     protected $table = "channel";
     protected $guarded = [];
-    public function posts()
+    public function article()
     {
         return $this->hasMany(Article::class);
     }

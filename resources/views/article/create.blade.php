@@ -25,14 +25,25 @@
             <div class="col-md-8">
               <div class="form-group">
                 <label>Title</label>
-                <input type="text" name="title" class="form-control" placeholder="Enter Title . . .">
+                <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{old('title')}}" required  placeholder="Enter Title . . .">
+                  @error('title')
+                    <div class="invalid-feedback">
+                        {{ $message }}    
+                    </div>
+                    @enderror
             </div>
               <!-- /.form-group -->
               <div class="form-group">
                 <label>Content</label>
-                <textarea class="form-control" id="editor" placeholder="Enter the Content" name="content"></textarea>
+                <textarea class="form-control  @error('content') is-invalid @enderror"  value="{{old('content')}}"  id="editor" placeholder="Enter the Content" name="content"></textarea>
+                   @error('content')
+                    <div class="invalid-feedback">
+                        {{ $message }}    
+                    </div>
+                    @enderror
             </div>
-              <!-- /.form-group -->
+               
+            <!-- /.form-group -->
             </div>
             <!-- /.col -->
             <div class="col-md-4">
@@ -48,7 +59,12 @@
               <!-- /.form-group -->
               <div class="form-group">
                 <label>Description</label>
-                <textarea name="description" class="form-control" cols="20" rows="10"></textarea>    
+                <textarea name="description" class="form-control   @error('description') is-invalid @enderror"  value="{{old('description')}}"  cols="20" rows="10"></textarea>    
+                  @error('description')
+                    <div class="invalid-feedback">
+                        {{ $message }}    
+                    </div>
+                    @enderror
             </div>
               <!-- /.form-group -->
                 <div class="form-group">
@@ -66,29 +82,33 @@
                 </div>
               <!-- /.form-group -->
                <div class="form-group">
+                    <label for="tag">Author</label>
+                    <select name="author[]" id="author" class="form-control select2 @error('author') is-invalid @enderror" required multiple>
+                        @foreach ($author as $tag)
+                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                        @endforeach
+                    </select>
+                    @error('author')
+                    <div class="invalid-feedback">
+                        {{ $message }}    
+                    </div>
+                    @enderror
+                </div>
+               {{-- <div class="form-group">
                 <label>Author</label>
                 <input type="text" name="id_author" class="form-control">
                 <input type="hidden" name="status" value="1">
-            </div>
+            </div> --}}
               <!-- /.form-group -->
+                 <button type="submit"  class="btn btn-primary">Submit</button>
             </div>
             <!-- /.col -->
-            <button type="submit" value="submit" class="btn_save btn btn-sm btn-default"><i class="fa fa-save"></i> Save</button>
+        
             </form>
           </div>
           <!-- /.row -->
         </div>
         <!-- /.box-body -->
-        <div class="box box-default">
-                <div class="box-body">
-                    {{-- <button type="button" class="btn_publish btn btn-sm btn-success" data-idle="<i class='fa fa-send'></i> Publish"><i class="fa fa-send"></i>
-                        Publish</button> --}}
-                    <button type="submit" class="btn_save btn btn-sm btn-default"><i class="fa fa-save"></i> Save</button>
-                    <div class="pull-right">
-                        <button type="button" class="btn_close btn btn-sm btn-danger"><i class="fa fa-close"></i> Close</button>
-                    </div>
-                </div>
-            </div>
       </div>
              
       <!-- /.row -->
@@ -97,11 +117,24 @@
             <!-- /.content -->
      
      @push('js')
-            <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
-        @include('template.ckeditor')
+            {{-- <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+        @include('template.ckeditor') --}}
+        <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script>
+  var options = {
+    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+  };
+</script>
+<script>
+    CKEDITOR.replace('editor', options);
+    </script>
+
         <script>
                $("#menu-editor").addClass("active");
-               $("#menu-article").addClass("active");
+               $("#menu-create-article").addClass("active");
         </script>
 
      @endpush

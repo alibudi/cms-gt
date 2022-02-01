@@ -23,12 +23,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
-// Route::group(['prefix' => 'laravel-filemanager'], function () {
-//      \UniSharp\LaravelFilemanager\Lfm::routes();
-   
-//  });
+ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+ \UniSharp\LaravelFilemanager\Lfm::routes();
+ });
+
+ 
 
 Route::prefix('admin')->middleware('auth')->group(function () {
+    // \UniSharp\LaravelFilemanager\Lfm::routes();
     Route::resource('home', DashboardController::class);
     Route::resource('role', RoleController::class);
     Route::post('upload', [ImageController::class,'store'])->name('upload');
