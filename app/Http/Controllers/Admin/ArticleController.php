@@ -21,7 +21,7 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(String $status)
+    public function index($status)
     {
         $article = Article::join('channel','channel.id','=','article.id_channel')
         ->join('users','users.id','=','article.id_editor')
