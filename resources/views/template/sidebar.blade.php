@@ -33,9 +33,13 @@
                     <!-- <li class="header">HEADER</li> -->
                     <!-- Optionally, you can add icons to the links -->
                     <li id="menu-dashboard"><a href="{{ route('home.index') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                     <li id="menu-role"><a href="{{ route('role.index') }}"><i class="fa fa-user"></i> <span>Role</span></a></li>
+                    @can('isAdmin')
+                    <li id="menu-user"><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
+                    <li id="menu-role"><a href="{{ route('role.index') }}"><i class="fa fa-user"></i> <span>Role</span></a></li>
                       <li id="menu-categori"><a href="{{ route('categori.index') }}"><i class="fa fa-file"></i> <span>Rubrik</span></a></li>
                         <li id="menu-tag"><a href="{{ route('tag.index') }}"><i class="fa fa-file-o"></i> <span>Tags</span></a></li>
+                  @endcan
+                  {{-- @can('isEditor') --}}
                     <li class="treeview" id="menu-editor">
                         <a href="#"><i class="fa fa-pencil-square-o"></i> <span>Editorial</span>
                             <span class="pull-right-container">
@@ -63,6 +67,7 @@
                             <li><a href="#">><i class="fa fa-file-text-o"></i>Topik Khusus</a></li>
                         </ul>
                     </li>
+                    {{-- @endcan --}}
                     <li class="treeview">
                         <a href="#"><i class="fa fa-image"></i> <span>Gallery</span>
                             <span class="pull-right-container">
@@ -70,7 +75,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-file-image-o"></i>Photo</a></li>
+                            <li id="menu-photo"><a href="{{ route('galeri.index') }}"><i class="fa fa-file-image-o"></i>Photo</a></li>
                             <li><a href="#"> <i class="fa fa-film"></i>Video</a></li>
                         </ul>
                     </li>

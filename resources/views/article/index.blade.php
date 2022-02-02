@@ -33,7 +33,7 @@
                   <th>Author</th>
                   <th>Editor</th>
                   <th>Date Created</th>
-                  <th>Publish Date</th>
+                  {{-- <th>Publish Date</th> --}}
                   <td>Action</td>
                 </tr>
                 </thead>
@@ -46,11 +46,23 @@
                         <td>{{ $no++ }}</td>
                         <td>{{ $item->title }}</td>
                         <td>{{ $item->status }}</td>
-                        <td>{{ $item->rubrik }}</td>
+                        <td>{{ $item->category }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->created_at }}</td>
+                        <td>
+                          <form action="{{ route('article.destroy',$item->id) }}" method="POST"> 
+                              <a class="btn btn-primary btn-xs" href="{{ route('article.edit',$item->id) }}"><i class="fa fa-pencil"></i></a> 
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i></button>
+                          </form>
+                        </td>
                       </tr>
                   @endforeach
-             
+             {{ $article->links() }}
                 </tbody>
+             
               </table>
             </div>
             <!-- /.box-body -->
