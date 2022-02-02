@@ -39,7 +39,7 @@
                       <li id="menu-categori"><a href="{{ route('categori.index') }}"><i class="fa fa-file"></i> <span>Rubrik</span></a></li>
                         <li id="menu-tag"><a href="{{ route('tag.index') }}"><i class="fa fa-file-o"></i> <span>Tags</span></a></li>
                   @endcan
-                  @can('isEditor')
+                  {{-- @can('isEditor') --}}
                     <li class="treeview" id="menu-editor">
                         <a href="#"><i class="fa fa-pencil-square-o"></i> <span>Editorial</span>
                             <span class="pull-right-container">
@@ -67,7 +67,7 @@
                             <li><a href="#">><i class="fa fa-file-text-o"></i>Topik Khusus</a></li>
                         </ul>
                     </li>
-                    @endcan
+                    {{-- @endcan --}}
                     <li class="treeview">
                         <a href="#"><i class="fa fa-image"></i> <span>Gallery</span>
                             <span class="pull-right-container">
