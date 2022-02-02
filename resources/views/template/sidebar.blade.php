@@ -70,7 +70,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-file-image-o"></i>Photo</a></li>
+                            <li id="menu-photo"><a href="{{ route('galeri.index') }}"><i class="fa fa-file-image-o"></i>Photo</a></li>
                             <li><a href="#"> <i class="fa fa-film"></i>Video</a></li>
                         </ul>
                     </li>

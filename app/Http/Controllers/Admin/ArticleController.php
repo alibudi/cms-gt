@@ -9,12 +9,9 @@ use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
-use Intervention\Image\Facades\Image;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\DB;
 class ArticleController extends Controller
 {
     /**
@@ -23,13 +20,14 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $article = Article::join('channel','channel.id','=','article.id_channel')
-        ->join('users','users.id','=','article.id_editor')
-        ->select('article.*','users.*','channel.*')
-        ->get();
-        dd($article);
-        // return view('article.index',compact('article'));
+    {   $article = DB::table('article')->join('channel','channel.id','=','article.id_channel')
+        ->join('users','users.id','=','article.id_editor')->select('article.*','users.name','channel.name as category')->latest()->paginate(5);
+        // $article = Article::join('channel','channel.id','=','article.id_channel')
+        // ->join('users','users.id','=','article.id_editor')
+        // ->select('article.*','users.name','channel.name as category')
+        // ->latest()->paginate(5);
+        // dd($article);
+        return view('article.index',compact('article'));
     }
 
     /**
@@ -53,34 +51,6 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     "title"    => "required",
-        //     "content"     => "required",
-        //     "description"      => "required",
-        //     "id_channel"  => "required", 
-        //     "id_editor"  => "required",
-        //     "status" => "required",
-        // ]);
-        // $data = [
-        //     'title'     => $request->title,
-        //     // 'cover'     => $thumbnail,
-        //     'content' => $request->content,
-        //     'id_editor' => Auth::user()->id,
-        //     'id_channel' => $request->id_channel,
-        //     'description' => $request->description,
-        //     'status' => $request->status,
-        //     // 'meta_desc' => $request->meta_desc,
-        // ];
-
-        // $article = Article::create($data);
-        // $article->tags()->attach($request->tags);
-        // if ($article) {
-        //     Alert::success('Sukses!', 'Berhasil Menambahkan data.');
-        //     return redirect()->route('article.index');
-        // }
-        // dd($article);
-        // Alert::success('Error!', 'Gagal menambahkan data');
-        // return redirect()->back();
           $validator = Validator::make($request->all(), [
             "title"     => "required|unique:article,title",
             "description"     => "required",
