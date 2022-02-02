@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\DocBlock\Tag as DocBlockTag;
+
 class ArticleController extends Controller
 {
     /**
@@ -38,7 +40,7 @@ class ArticleController extends Controller
     public function create()
     {
         $categories = Category::all();
-        $tags       = Tag::all();
+        $tags       = DocBlockTag::all();
         $author = User::all();
         return view('article.create',compact('categories','tags','author'));
     }
