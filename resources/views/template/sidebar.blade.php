@@ -33,7 +33,8 @@
                     <!-- <li class="header">HEADER</li> -->
                     <!-- Optionally, you can add icons to the links -->
                     <li id="menu-dashboard"><a href="{{ route('home.index') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                     <li id="menu-role"><a href="{{ route('role.index') }}"><i class="fa fa-user"></i> <span>Role</span></a></li>
+                    <li id="menu-user"><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
+                    <li id="menu-role"><a href="{{ route('role.index') }}"><i class="fa fa-user"></i> <span>Role</span></a></li>
                       <li id="menu-categori"><a href="{{ route('categori.index') }}"><i class="fa fa-file"></i> <span>Rubrik</span></a></li>
                         <li id="menu-tag"><a href="{{ route('tag.index') }}"><i class="fa fa-file-o"></i> <span>Tags</span></a></li>
                     <li class="treeview" id="menu-editor">

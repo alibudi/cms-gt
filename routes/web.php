@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GaleryController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -34,4 +35,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('article',ArticleController::class);
     Route::resource('categori',CategoryController::class);
     Route::resource('galeri',GaleryController::class);
+    Route::resource('users',UserController::class);
 });
