@@ -35,6 +35,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('role', RoleController::class);
     Route::post('upload', [ImageController::class,'store'])->name('upload');
     Route::resource('tag', TagController::class);
+    Route::get('article/{status}',  [ArticleController::class,'index']);
     Route::resource('article',ArticleController::class);
     Route::resource('categori',CategoryController::class);
 });
