@@ -32,9 +32,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('role', RoleController::class);
     Route::post('upload', [ImageController::class,'store'])->name('upload');
     Route::resource('tag', TagController::class);
+    Route::get('article/create',[ArticleController::class,'create'])->name('article.create');
     Route::get('article/{status}',  [ArticleController::class,'index']);
     Route::resource('article',ArticleController::class);
     Route::resource('categori',CategoryController::class);
     Route::resource('galeri',GaleryController::class);
     Route::resource('users',UserController::class);
+    Route::get('photo',[GaleryController::class,'photo'])->name('photo');
+    Route::get('photo/frame',[GaleryController::class,'photoFrame'])->name('photo-frame');
 });

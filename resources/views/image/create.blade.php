@@ -13,7 +13,19 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form method="POST" action="{{ route('galeri.store') }}" enctype="multipart/form-data">
+            
+             <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#modal-image"><i class="fa fa-plus"></i> Add Foto</button>
+ {{-- modal --}}
+      <div class="modal fade" id="modal-image">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Default Modal</h4>
+              </div>
+              <div class="modal-body">
+               <form method="POST" action="{{ route('galeri.store') }}" enctype="multipart/form-data">
               @csrf
               <div class="box-body">
                 <div class="form-group">
@@ -29,14 +41,20 @@
                         {{ $message }}    
                     </div>
                     @enderror
-               
               </div>
               <!-- /.box-body -->
-
-              <div class="box-footer">
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Save</button>
               </div>
             </form>
+            </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
           </div>
           <!-- /.box -->
 

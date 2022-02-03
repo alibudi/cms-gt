@@ -1,3 +1,5 @@
+  <div class="wrapper">
+
   <header class="main-header">
 
             <!-- Logo -->
