@@ -89,14 +89,14 @@
                             <li><a href="#"><i class="fa fa-file-text"></i>Notifikasi</a></li>
                         </ul>
                     </li>
-                    <li class="treeview">
+                    <li class="treeview" id="menu-news">
                         <a href="#"><i class="fa fa-envelope "></i> <span>Breaking News</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-file-text"></i>Breaking News</a></li>
+                            <li id="menu-news"><a href="{{ route('news.index') }}"><i class="fa fa-file-text"></i>Breaking News</a></li>
                         </ul>
                     </li>
                     <li class="treeview">

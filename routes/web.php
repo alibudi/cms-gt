@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\BreakingNews;
+use App\Http\Controllers\Admin\BreakingNewsController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GaleryController;
@@ -40,4 +42,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('users',UserController::class);
     Route::get('photo',[GaleryController::class,'photo'])->name('photo');
     Route::get('photo/frame',[GaleryController::class,'photoFrame'])->name('photo-frame');
+    Route::resource('news', BreakingNewsController::class);
 });
