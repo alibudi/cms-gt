@@ -60,7 +60,6 @@
                         </td>
                       </tr>
                   @endforeach
-             {{ $article->links() }}
                 </tbody>
              
               </table>
