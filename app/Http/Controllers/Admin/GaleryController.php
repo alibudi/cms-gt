@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Str;
+use Yajra\DataTables\Facades\DataTables;
+
 class GaleryController extends Controller
 {
     /**
@@ -90,7 +92,7 @@ class GaleryController extends Controller
     public function edit($id)
     {
           $images = Gallery::findOrFail($id);
-        return view('',compact('images'));
+        return view('image.edit',compact('images'));
     }
 
     /**
@@ -104,7 +106,7 @@ class GaleryController extends Controller
     {
         $request->validate([
              "alt"     => "required",
-            "cover"     => "required",
+            "path"     => "required",
         ]);
 
         $post = Gallery::find($id);
@@ -162,7 +164,7 @@ class GaleryController extends Controller
 
     public function photo()
     {
-        $photo = Gallery::paginate(10);
+       $photo = Gallery::paginate(10);
         return view('image.photo',compact('photo'));
     }
 

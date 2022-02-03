@@ -72,7 +72,7 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Default Modal</h4>
+                <h4 class="modal-title">Image</h4>
               </div>
               <div class="modal-body">
                <form method="POST" action="{{ route('galeri.store') }}" enctype="multipart/form-data">
@@ -105,6 +105,8 @@
           <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
+
+         
     </section>
     <!-- /.content -->
     @push('js')
