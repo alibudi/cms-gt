@@ -54,7 +54,7 @@
                             <li><a href="{{ route('article.index') }}/deleted"><i class="fa fa-trash-o"></i>Trash</a></li>
                         </ul>
                     </li>
-                    <li class="treeview">
+                    <li class="treeview" id="menu-web">
                         <a href="#"><i class="fa fa-clipboard"></i> <span>Web Management</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
@@ -64,7 +64,7 @@
                             <li><a href="#"><i class="fa fa-reorder"></i>Headline WP</a></li>
                             <li><a href="#"><i class="fa fa-reorder"></i>Headline Rubrik</a></li>
                             <li><a href="#"><i class="fa fa-thumb-tack"></i>Pilihan Editor</a></li>
-                            <li><a href="#">><i class="fa fa-file-text-o"></i>Topik Khusus</a></li>
+                            <li id="menu-topik"><a href="{{ route('topic.index') }}"><i class="fa fa-file-text-o"></i>Topik Khusus</a></li>
                         </ul>
                     </li>
                     {{-- @endcan --}}

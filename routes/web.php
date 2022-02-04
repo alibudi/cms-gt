@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GaleryController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\TopikController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
@@ -43,4 +44,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('photo',[GaleryController::class,'photo'])->name('photo');
     Route::get('photo/frame',[GaleryController::class,'photoFrame'])->name('photo-frame');
     Route::resource('news', BreakingNewsController::class);
+    Route::resource('topic', TopikController::class);
 });
