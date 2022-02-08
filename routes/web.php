@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TopikController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -45,4 +46,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('photo/frame',[GaleryController::class,'photoFrame'])->name('photo-frame');
     Route::resource('news', BreakingNewsController::class);
     Route::resource('topic', TopikController::class);
+    Route::resource('videos', VideoController::class);
 });

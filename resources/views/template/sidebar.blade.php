@@ -131,7 +131,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="{{ route('photo') }}"><i class="fa  fa-file-image-o text-blue"></i>Photo</a></li>
-                            <li><a href="#"><i class="fa  fa-file-film text-blue"></i>Video</a></li>
+                            <li><a href="{{ route('videos.index') }}"><i class="fa  fa-file-film text-blue"></i>Video</a></li>
                         </ul>
                     </li>
                 </ul>

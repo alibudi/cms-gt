@@ -14,7 +14,8 @@
                 {{-- <label class="btn btn-sm btn-default"> --}}
                  
                 {{-- <input type="file" name="path" style="display: none !important;" > --}}
-                <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#modal-image"><i class="fa fa-plus"></i> Upload Files</button>
+                <a href="{{ route('videos.create') }}" class="btn btn-sm btn-primary"> <i class="fa fa-plus"></i>New Video </a>
+                {{-- <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-image"><i class="fa fa-plus"></i> New Video</button> --}}
             {{-- </label> --}}
             
             <a href="" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i> Refresh</a>
@@ -30,7 +31,7 @@
         </div>
         <div class="box-body">
         <div class="row">
-            @foreach ($photo as $item)
+            {{-- @foreach ($photo as $item) --}}
                 <div id="photo-2139369" class="photo-list pull-left">
                 <div style="margin-left:15px;margin-bottom:15px;position:relative">
                     <div class="img-thumbnail overlay-wrapper">
@@ -54,7 +55,7 @@
                 </div>
 
             </div>
-            @endforeach
+            {{-- @endforeach --}}
         </div>
         </div>
         <!-- /.box-body -->
