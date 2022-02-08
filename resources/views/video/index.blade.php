@@ -31,17 +31,19 @@
         </div>
         <div class="box-body">
         <div class="row">
-            {{-- @foreach ($photo as $item) --}}
+            @foreach ($videos as $item)
                 <div id="photo-2139369" class="photo-list pull-left">
                 <div style="margin-left:15px;margin-bottom:15px;position:relative">
                     <div class="img-thumbnail overlay-wrapper">
-                        {{-- <img src="{{URL::to('/')}}/img/article/thumbnail/{{ $item->path }}" alt="Ilustrasi orang duduk di kursi." title="Ilustrasi orang duduk di kursi." class="img-responsive" style="width:214px;height:95px"> --}}
+                        <img src="{https://img.youtube.com/vi/GMP3kYq2bE/default.jpg" alt="" title="" class="img-responsive" style="width:214px;height:95px">
+                      
+                     
                         <div style="margin-top:5px">
                             {{-- <small title="{{ $item->alt }}">{{ $item->alt }}</small><br> --}}
                             {{-- <strong><small title="{{ $item->alt }}">by: Rahajeng Pramesi</small></strong> --}}
                             {{-- <br><small title="Ayo Yogya">Ayo Yogya</small> --}}
                             <div class="pull-right">
-                                 <form action="" method="POST"> 
+                                 <form action="{{ route('videos.destroy',$item->id) }}" method="POST"> 
                               <a class="btn btn-primary btn-xs" href=""><i class="fa fa-pencil"></i></a> 
                               @csrf
                               @method('DELETE')
@@ -55,7 +57,7 @@
                 </div>
 
             </div>
-            {{-- @endforeach --}}
+            @endforeach
         </div>
         </div>
         <!-- /.box-body -->

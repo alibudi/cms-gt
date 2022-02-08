@@ -28,6 +28,18 @@ class ArticleController extends Controller
         return view('article.index',compact('article'));
     }
 
+      public function autocomplete(Request $request)
+    {
+    	$data = [];
+
+        if($request->has('q')){
+            $search = $request->q;
+            $data = Tag::select("id","name")
+            		->where('name','LIKE',"%$search%")
+            		->get();
+        }
+        return response()->json($data);
+    }
     /**
      * Show the form for creating a new resource.
      *

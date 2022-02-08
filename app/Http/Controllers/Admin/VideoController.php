@@ -22,15 +22,11 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            // 'image' => 'required',
             'url' => 'required',
-            // 'alt' => 'required',
         ]);
 
         $video = new Videos();
-        // $video->image = $request->image;
         $video->url = $request->url;
-        // $video->alt = $request->alt;
         $video->save();
 
         return redirect()->route('videos.index')->with('success', 'Video added successfully');
@@ -51,9 +47,9 @@ class VideoController extends Controller
         ]);
 
         $video = Videos::find($id);
-        // $video->image = $request->image;
+        $video->title = $request->title;
         $video->url = $request->url;
-        // $video->alt = $request->alt;
+        $video->description = $request->description;
         $video->save();
 
         return redirect()->route('videos.index')->with('success', 'Video updated successfully');
@@ -63,6 +59,6 @@ class VideoController extends Controller
     {
         $video = Videos::find($id);
         $video->delete();
-        return redirect()->route('admin.video.index')->with('success', 'Video deleted successfully');
+        return redirect()->route('videos.index')->with('success', 'Video deleted successfully');
     }
 }

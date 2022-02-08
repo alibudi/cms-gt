@@ -47,4 +47,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('news', BreakingNewsController::class);
     Route::resource('topic', TopikController::class);
     Route::resource('videos', VideoController::class);
+        Route::get('post/autocomplete', [ArticleController::class, 'autocomplete'])->name('post.autocomplete');
 });

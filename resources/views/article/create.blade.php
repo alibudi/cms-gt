@@ -1,5 +1,9 @@
 @extends('template.master')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('admin/select2/dist/css/select2.min.css') }}">
+@endsection
 @section('header-js')
+
      <script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
 @endsection
 @section('content')
@@ -59,7 +63,7 @@
               <!-- /.form-group -->
               <div class="form-group">
                 <label>Description</label>
-                <textarea name="description" class="form-control   @error('description') is-invalid @enderror"  value="{{old('description')}}"  cols="20" rows="10"></textarea>    
+                <textarea name="description" class="form-control   @error('description') is-invalid @enderror"  value="{{old('description')}}"  cols="5" rows="5"></textarea>    
                   @error('description')
                     <div class="invalid-feedback">
                         {{ $message }}    
@@ -67,12 +71,13 @@
                     @enderror
             </div>
               <!-- /.form-group -->
-                <div class="form-group">
+                 <div class="form-group">
                     <label for="tag">Tags</label>
-                    <select name="tags[]" id="tag" class="form-control select2 @error('tags') is-invalid @enderror" required multiple>
-                        @foreach ($tags as $tag)
+                         <select class="tags form-control  select2" multiple="multiple" name="tags[]"></select>
+                    {{-- <select name="tags[]" id="tag" class="livesearch  form-control select2 @error('tags') is-invalid @enderror" required multiple> --}}
+                        {{-- @foreach ($tags as $tag)
                         <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-                        @endforeach
+                        @endforeach --}}
                     </select>
                     @error('tags')
                     <div class="invalid-feedback">
@@ -120,6 +125,8 @@
             {{-- <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
         @include('template.ckeditor') --}}
         <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+        <!-- Select2 -->
+<script src="{{ asset('admin/select2/dist/js/select2.full.min.js') }}"></script>
 <script>
   var options = {
     filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
@@ -136,6 +143,27 @@
                $("#menu-editor").addClass("active");
                $("#menu-create-article").addClass("active");
         </script>
-
+  <script type="text/javascript">
+    $('.tags').select2({
+      // theme: 'bootstrap4',
+        placeholder: 'Select Tags',
+        ajax: {
+            url: '{{ route('post.autocomplete') }}',
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.name,
+                            id: item.id
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    });
+</script>
      @endpush
 @endsection
