@@ -48,8 +48,8 @@
                         </a>
                         <ul class="treeview-menu">
                             <li id="menu-create-article" ><a href="{{ route('article.create') }}"> <i class="fa fa-file-text-o"></i>   Create Article</a></li>
-                            <li><a href="{{ route('article.index') }}/draft"><i class="fa fa-clone"></i>Draft</a></li>
-                            <li id="menu-article"><a href="{{ route('article.index') }}/published"><i class="fa fa-check-square-o"></i>Published</a></li>
+                            <li id="menu-draft"><a href="{{ route('article.draft') }}"><i class="fa fa-clone"></i>Draft</a></li>
+                            <li id="menu-article"><a href="{{ route('article.index') }}"><i class="fa fa-check-square-o"></i>Published</a></li>
                             <li><a href="{{ route('article.index') }}/scheduled"><i class="fa  fa-calendar"></i>Scheduled</a></li>
                             <li><a href="{{ route('article.index') }}/deleted"><i class="fa fa-trash-o"></i>Trash</a></li>
                         </ul>

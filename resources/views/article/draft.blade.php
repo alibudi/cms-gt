@@ -45,13 +45,13 @@
                   @php
                         $status = '';
                       @endphp
-                       @if(strtolower($item->status) == '1')
+                       @if(strtolower($item->status) == '0')
                           @php
-                            $status = '<span class="label label-success">Publish</span>';
+                              $status = '<span class="label label-danger">Draft</span>';
                           @endphp
                         @else
                           @php
-                            $status = '<span class="label label-danger">Draft</span>';
+                            $status = '<span class="label label-success">Publish</span>';
                           @endphp
                         @endif
                       <tr>
@@ -87,7 +87,7 @@
     @push('js')
         <script>
                $("#menu-editor").addClass("active");
-               $("#menu-article").addClass("active");
+               $("#menu-draft").addClass("active");
         </script>
     @endpush
 @endsection

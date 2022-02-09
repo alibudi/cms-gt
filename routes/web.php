@@ -37,7 +37,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('upload', [ImageController::class,'store'])->name('upload');
     Route::resource('tag', TagController::class);
     Route::get('article/create',[ArticleController::class,'create'])->name('article.create');
-    Route::get('article/{status}',  [ArticleController::class,'index']);
+    // Route::get('article/{status}',  [ArticleController::class,'index']);
+    Route::get('article/draft',  [ArticleController::class,'draft'])->name('article.draft');
     Route::resource('article',ArticleController::class);
     Route::resource('categori',CategoryController::class);
     Route::resource('galeri',GaleryController::class);

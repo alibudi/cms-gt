@@ -18,14 +18,28 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($status)
+    public function index()
     {
         $article = Article::join('channel','channel.id','=','article.id_channel')
         ->join('users','users.id','=','article.id_editor')
-        ->select('article.*','users.*','channel.*')
-        ->where('article.status','=',$status)
+        ->select('article.*','users.*','channel.name as channel_name')
+        ->where('article.status','=','1')
         ->get();
+        // dd($article);
+        // $article = Article::where('status',1)->get();
         return view('article.index',compact('article'));
+    }
+
+    public function draft()
+    {
+        $article = Article::join('channel','channel.id','=','article.id_channel')
+        ->join('users','users.id','=','article.id_editor')
+        ->select('article.*','users.*','channel.name as channel_name')
+        ->where('article.status','=','0')
+        ->get();
+        // dd($article);
+        // $article = Article::where('status',1)->get();
+        return view('article.draft',compact('article'));
     }
 
       public function autocomplete(Request $request)
