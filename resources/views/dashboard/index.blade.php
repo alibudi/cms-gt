@@ -7,7 +7,7 @@
                         <!-- small box -->
                         <div class="small-box bg-aqua">
                             <div class="inner">
-                                <h3>150</h3>
+                                <h3>{{ $draft }}</h3>
             
                                 <p>Draft</p>
                             </div>
@@ -35,7 +35,7 @@
                         <!-- small box -->
                         <div class="small-box bg-green">
                             <div class="inner">
-                                <h3>44</h3>
+                                <h3>{{ $publish }}</h3>
             
                                 <p>Published</p>
                             </div>

@@ -11,7 +11,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $article = Article::count();
-        return view('dashboard.index', compact('article'));
+        $publish = Article::where('status',1)->count();
+        $draft = Article::where('status',0)->count();;
+        return view('dashboard.index', compact('publish','draft'));
     }
 }
