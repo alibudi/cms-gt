@@ -99,13 +99,11 @@
                     </div>
                     @enderror
                 </div>
-               {{-- <div class="form-group">
-                <label>Author</label>
-                <input type="text" name="id_author" class="form-control">
-                <input type="hidden" name="status" value="1">
-            </div> --}}
+             
               <!-- /.form-group -->
-                 <button type="submit"  class="btn btn-primary">Submit</button>
+                 {{-- <button type="submit"  class="btn btn-primary">Submit</button> --}}
+                 <input type="submit" name="publish" value="Publish ">
+                <input type="submit" name="save" value="Save">
             </div>
             <!-- /.col -->
         

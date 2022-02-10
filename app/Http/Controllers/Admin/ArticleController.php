@@ -84,13 +84,17 @@ class ArticleController extends Controller
             "id_editor"  => "required",
             "status" => "required",
         ]);
-        $article = new Article();
+       
+
+        if ($request->has('save'))
+            {
+             $article = new Article();
         $article->title = $request->title;
         $article->description = $request->description;
         $article->content = $request->content;
         $article->id_channel = $request->id_channel;
         $article->id_editor = Auth::user()->id;
-        $article->status  = $request->status;
+        $article->status  = "0";
         $article->save();
         $article->tags()->attach($request->tags);
         $article->author()->attach($request->author);
@@ -100,7 +104,26 @@ class ArticleController extends Controller
         }
         Alert::success('Error!', 'Gagal menambahkan data');
         return redirect()->back();
-        // dd($article);
+            }
+            else if ($request->has('publish'))
+            {
+            $article = new Article();
+            $article->title = $request->title;
+            $article->description = $request->description;
+            $article->content = $request->content;
+            $article->id_channel = $request->id_channel;
+            $article->id_editor = Auth::user()->id;
+            $article->status  ="1";
+            $article->save();
+            $article->tags()->attach($request->tags);
+            $article->author()->attach($request->author);
+            if ($article) {
+                Alert::success('Sukses!', 'Berhasil Menambahkan data.');
+                return redirect()->route('article.index');
+            }
+            Alert::success('Error!', 'Gagal menambahkan data');
+            return redirect()->back();
+            }
     }
 
     /**
