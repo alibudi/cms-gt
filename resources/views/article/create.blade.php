@@ -102,8 +102,8 @@
              
               <!-- /.form-group -->
                  {{-- <button type="submit"  class="btn btn-primary">Submit</button> --}}
-                 <input type="submit" name="publish" value="Publish ">
-                <input type="submit" name="save" value="Save">
+                 <input type="submit" class="btn btn-primary" name="publish" value="Publish ">
+                <input type="submit" class="btn btn-success" name="save" value="Save">
             </div>
             <!-- /.col -->
         
