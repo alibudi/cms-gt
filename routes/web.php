@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BreakingNewsController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GaleryController;
+use App\Http\Controllers\Admin\HeadlineController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TopikController;
@@ -48,5 +49,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('news', BreakingNewsController::class);
     Route::resource('topic', TopikController::class);
     Route::resource('videos', VideoController::class);
+    Route::resource('headline', HeadlineController::class);
         Route::get('post/autocomplete', [ArticleController::class, 'autocomplete'])->name('post.autocomplete');
 });
