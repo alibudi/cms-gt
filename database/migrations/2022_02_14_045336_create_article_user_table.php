@@ -15,8 +15,8 @@ class CreateArticleUserTable extends Migration
     {
         Schema::create('article_user', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->id('article_id');
-            $table->id('user_id');
+            $table->integer('article_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

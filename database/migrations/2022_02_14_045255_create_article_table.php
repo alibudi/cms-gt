@@ -18,11 +18,11 @@ class CreateArticleTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->text('content');
-            $table->id('id_channel');
-            $table->id('id_editor');
+            $table->integer('id_channel');
+            $table->integer('id_editor');
             $table->date('published_date');
             $table->string('status');
-            $table->id('id_thumbnail');
+            $table->integer('id_thumbnail');
             $table->timestamps();
             $table->softDeletes();
         });
