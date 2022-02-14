@@ -9,16 +9,10 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-        
-            <div class="form-group pull-left">
-                {{-- <label class="btn btn-sm btn-default"> --}}
-                 
-                {{-- <input type="file" name="path" style="display: none !important;" > --}}
-                <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#modal-image"><i class="fa fa-plus"></i> Upload Files</button>
-            {{-- </label> --}}
-            
-            <a href="{{ route('photo') }}" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i> Refresh</a>
+        <div class="box-header">
+            <label for="">Headline</label>
         </div>
+           
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
