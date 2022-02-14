@@ -25,7 +25,6 @@ class CreateArticleTable extends Migration
             $table->id('id_thumbnail');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('id_channel')->references('id')->on('channel');
         });
     }
 
