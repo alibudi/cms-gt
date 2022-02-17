@@ -125,6 +125,7 @@
         <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
         <!-- Select2 -->
 <script src="{{ asset('admin/select2/dist/js/select2.full.min.js') }}"></script>
+<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <script>
   var options = {
     filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
