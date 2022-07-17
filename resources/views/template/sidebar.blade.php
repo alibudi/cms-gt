@@ -33,12 +33,7 @@
                     <!-- <li class="header">HEADER</li> -->
                     <!-- Optionally, you can add icons to the links -->
                     <li id="menu-dashboard"><a href="{{ route('home.index') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                    @can('isAdmin')
-                    <li id="menu-user"><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
-                    <li id="menu-role"><a href="{{ route('role.index') }}"><i class="fa fa-user"></i> <span>Role</span></a></li>
-                      <li id="menu-categori"><a href="{{ route('categori.index') }}"><i class="fa fa-file"></i> <span>Rubrik</span></a></li>
-                        <li id="menu-tag"><a href="{{ route('tag.index') }}"><i class="fa fa-file-o"></i> <span>Tags</span></a></li>
-                  @endcan
+                   
                   {{-- @can('isEditor') --}}
                     <li class="treeview" id="menu-editor">
                         <a href="#"><i class="fa fa-pencil-square-o"></i> <span>Editorial</span>
@@ -123,6 +118,7 @@
                             <li><a href="#"><i class="fa fa-rss text-purple"></i>Rss Feed</a></li>
                         </ul>
                     </li>
+                    
                     <li class="treeview">
                         <a href="#"><i class="fa fa-database "></i> <span>Assets</span>
                             <span class="pull-right-container">
@@ -134,6 +130,12 @@
                             <li><a href="{{ route('videos.index') }}"><i class="fa  fa-file-film text-blue"></i>Video</a></li>
                         </ul>
                     </li>
+                    @can('isAdmin')
+                    <li id="menu-user"><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
+                    <li id="menu-role"><a href="{{ route('role.index') }}"><i class="fa fa-user"></i> <span>Role</span></a></li>
+                      <li id="menu-categori"><a href="{{ route('categori.index') }}"><i class="fa fa-file"></i> <span>Rubrik</span></a></li>
+                        <li id="menu-tag"><a href="{{ route('tag.index') }}"><i class="fa fa-file-o"></i> <span>Tags</span></a></li>
+                  @endcan
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>

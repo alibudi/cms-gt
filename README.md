@@ -13,4 +13,14 @@
 <br>
 7. sebelum jalankan php artisan db:seed bisa di cek di folder database/seeders/userstable
 </p>
-
+  <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/login.PNG?raw=true" alt="">
+        <br>
+        <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/dashboard.PNG?raw=true" alt="">
+        <br>
+        <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/article.PNG?raw=true">
+        <br>
+        <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/news.PNG?raw=true">
+              <br>
+        <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/publish.PNG?raw=true">
+              <br>
+        <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/galeri.PNG?raw=true">
