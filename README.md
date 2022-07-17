@@ -1,5 +1,5 @@
 <p>CMS GT</p>
-<p>1. git clone https://github.com/alibudi/cms-hops.git
+<p>1. git clone https://github.com/alibudi/cms-gt.git
 <br>
 2. Composer update
 <br>
