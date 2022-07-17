@@ -1,4 +1,4 @@
-<p>CMS Hops ID</p>
+<p>CMS GT</p>
 <p>1. git clone https://github.com/alibudi/cms-hops.git
 <br>
 2. Composer update
@@ -13,14 +13,13 @@
 <br>
 7. sebelum jalankan php artisan db:seed bisa di cek di folder database/seeders/userstable
 </p>
-  <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/login.PNG?raw=true" alt="">
+  <img src="https://raw.githubusercontent.com/alibudi/cms-hops/main/public/image/login.png" alt="">
         <br>
-        <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/dashboard.PNG?raw=true" alt="">
+        <img src="https://raw.githubusercontent.com/alibudi/cms-hops/main/public/image/dashboard.png" alt="">
         <br>
-        <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/article.PNG?raw=true">
+        <img src="https://raw.githubusercontent.com/alibudi/cms-hops/main/public/image/article.png">
         <br>
-        <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/news.PNG?raw=true">
+        <img src="https://raw.githubusercontent.com/alibudi/cms-hops/main/public/image/news.png">
               <br>
-        <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/publish.PNG?raw=true">
-              <br>
-        <img src="https://github.com/alibudi/starter-lara/blob/main/public/image/galeri.PNG?raw=true">
+        <img src="https://raw.githubusercontent.com/alibudi/cms-hops/main/public/image/galeri.png">
+
